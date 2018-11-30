@@ -23,7 +23,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-.mvn
+
 
 # compiled output
 /dist
