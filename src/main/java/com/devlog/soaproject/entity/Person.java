@@ -17,8 +17,8 @@ public class Person {
     private String forename;
     @Column(name = "email")
     private String email;
-    @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
-    private Set<Message> messages;
+    @Column(name = "password")
+    private String password;
 
     public Person() {
     }
@@ -54,4 +54,13 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
 }
+

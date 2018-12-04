@@ -10,6 +10,6 @@ import java.util.List;
 public interface MessageRepository extends JpaRepository<Message, Integer>{
 
     public Message findMessagesByIdMessage(Integer idMessage);
-    public void deleteMessageByIdMessage(Integer idMessage);
+    public List<Message> findMessagesByTopers(String toPers);
 
 }

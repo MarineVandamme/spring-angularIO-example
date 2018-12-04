@@ -6,6 +6,7 @@ import com.devlog.soaproject.entity.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -16,8 +17,10 @@ public class MessagingServiceImpl implements MessagingService{
 
 
     @Override
-    public List<Message> getAll() {
-        return messageRepository.findAll();
+    public List<Message> getAll(String topers) {
+      System.out.println("topers : "+topers);
+      System.out.println("MSGS : "+messageRepository.findMessagesByTopers(topers));
+        return messageRepository.findMessagesByTopers(topers);
     }
 
     @Override
@@ -27,11 +30,13 @@ public class MessagingServiceImpl implements MessagingService{
 
     @Override
     public void deleteMessageById(Integer idMessage) {
-        messageRepository.deleteMessageByIdMessage(idMessage);
+        Message message = messageRepository.findMessagesByIdMessage(idMessage);
+        messageRepository.delete(message);
     }
 
     @Override
     public void addMessage(Message message) {
+      message.setDateTime(LocalDateTime.now());
         messageRepository.save(message);
     }
 }
