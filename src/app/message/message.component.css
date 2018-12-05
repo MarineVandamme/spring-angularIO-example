@@ -1,0 +1,9 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.right{
+  text-align: right;
+}
+.container{
+  margin-bottom: 20px;
+}

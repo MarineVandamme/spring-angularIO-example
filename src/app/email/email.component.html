@@ -1,0 +1,22 @@
+<section class="container">
+  <button class="btn btn-primary" routerLink="/messages">Annuler</button>
+</section>
+<section class="container">
+  <h2>Send a new message <br/></h2>
+  <form [formGroup]="sendForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">To :</label>
+      <input type="text" class="form-control" placeholder="email" name="email" id="email" [(ngModel)]="message.topers" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject :</label>
+      <input type="text" class="form-control" placeholder="subject" name="subject" id="subject" [(ngModel)]="message.subject" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <div class="form-group">
+      <label for="text">Text :</label>
+      <textarea rows="20" class="form-control" placeholder="text" name="text" id="text" [(ngModel)]="message.text" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" id="submit">Submit</button>
+  </form>
+</section>
+

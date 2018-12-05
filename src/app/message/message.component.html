@@ -1,0 +1,15 @@
+<section class="container col-sm-6">
+  <button routerLink="/messages" class="btn btn-primary">Back</button>
+  <br/>
+</section>
+<section class="container col-sm-6" *ngIf="message!=undefined">
+  <section class="container">
+    <div class="text-dark" *ngIf="person!=null">From: {{person.forename+' '+person.name.toUpperCase()}}</div>
+    <h3 class="text-dark" *ngIf="message!=null">Subject: {{message.subject}}</h3>
+  </section>
+  <div class="col-md">
+    <pre class="card-text" *ngIf="message!=null">{{message.text}}</pre>
+    <div class="text-muted right" *ngIf="message!=null">{{message.dateTime|date:'dd/MM/yyyy à HH:mm':'+0200'}}</div>
+  </div>
+
+</section>

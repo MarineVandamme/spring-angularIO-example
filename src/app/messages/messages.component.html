@@ -1,0 +1,27 @@
+<section class="container btn-group">
+  <button class="btn btn-primary" routerLink="/send">New Message</button>
+  <button class="btn btn-primary" (click)="ngOnInit()">Refresh</button>
+</section>
+<section class="container">
+  <table class="table table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th scope = col>#</th>
+      <th scope="col">Emetteur</th>
+      <th scope="col">Objet</th>
+      <th scope="col">Date</th>
+      <th scope="col">Heure</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of messages">
+      <th scope="row" (click)="deleteMessage(message)"><button class="btn btn-danger">X</button></th>
+      <td [routerLink]="['/message', message.idMessage]">{{message.frompers}}</td>
+      <td [routerLink]="['/message', message.idMessage]">{{message.subject}}</td>
+      <td [routerLink]="['/message', message.idMessage]">{{message.dateTime|date:'dd/MM/yyy' }}</td>
+      <td [routerLink]="['/message', message.idMessage]">{{message.dateTime|date:'HH:mm':'+0200' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
